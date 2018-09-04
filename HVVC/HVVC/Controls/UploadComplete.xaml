@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="HVCC.Controls.UploadComplete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="0,25,0,0">
+        <TextBlock x:Name="tb_status" Style="{StaticResource TA}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,5">
+            <Run>We uploaded 12 items to</Run>
+            <Run x:Name="tb_user" FontWeight="Bold"></Run>
+            <Run>health record. You can disconnect your device now.</Run>
+        </TextBlock>
+        <Button Style="{StaticResource ButtonStandard}" Width="Auto" Margin="0,20,0,10" Content="See your data in HealthVault" Click="Button_Click" />
+        <Button Style="{StaticResource ButtonStandard}" Width="Auto" Content="Find an application to use" Click="Button_Click_1" />
+    </StackPanel>
+</UserControl>

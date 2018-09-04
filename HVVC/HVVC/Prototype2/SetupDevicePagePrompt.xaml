@@ -1,0 +1,37 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.SetupDevicePagePrompt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Setup Device Page Prompt"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="If the manufacturer driver install requires additional steps, users will see this dialog."
+    Style="{StaticResource UC_Dialog}">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+            <Grid HorizontalAlignment="Left" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <p2:PixelSnappedImage Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Source="../images/icn_warning.png" Width="24" Height="24" />
+                <TextBlock Grid.Column="1" Style="{StaticResource DLG_Header}" TextWrapping="Wrap">Additional Steps are required</TextBlock>
+            </Grid>
+
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                <Hyperlink Style="{StaticResource A1}">Go to the device manufacturer's Web site</Hyperlink> to complete additional steps to add this device. Then return to HealthVault Connection Cneter screen, check the box and continue.
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="0,20,0,0">
+                <CheckBox>I've completed the additional steps to add this device</CheckBox>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="True" Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Continue" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

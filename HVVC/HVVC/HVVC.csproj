@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBB16BD7-0F9D-4D1F-A57F-FC7D3B03D52A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HVVC</RootNamespace>
+    <AssemblyName>HVVC</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hv.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BitMap.cs" />
+    <Compile Include="Controls\DeviceInfo.xaml.cs">
+      <DependentUpon>DeviceInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Error.xaml.cs">
+      <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GhostMenu.xaml.cs">
+      <DependentUpon>GhostMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GiveAccountAccess.xaml.cs">
+      <DependentUpon>GiveAccountAccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NothingHappened.xaml.cs">
+      <DependentUpon>NothingHappened.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecordPicker.xaml.cs">
+      <DependentUpon>RecordPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecordPicker2.xaml.cs">
+      <DependentUpon>RecordPicker2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecordPicker3.xaml.cs">
+      <DependentUpon>RecordPicker3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecordPicker4.xaml.cs">
+      <DependentUpon>RecordPicker4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RemoveAccount.xaml.cs">
+      <DependentUpon>RemoveAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RemovingAccount.xaml.cs">
+      <DependentUpon>RemovingAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectFromList.xaml.cs">
+      <DependentUpon>SelectFromList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SwitchAccount.xaml.cs">
+      <DependentUpon>SwitchAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Updates.xaml.cs">
+      <DependentUpon>Updates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UploadComplete.xaml.cs">
+      <DependentUpon>UploadComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Uploading.xaml.cs">
+      <DependentUpon>Uploading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UploadSettings.xaml.cs">
+      <DependentUpon>UploadSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Waiting.xaml.cs">
+      <DependentUpon>Waiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Dialog.xaml.cs">
+      <DependentUpon>Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Footer.xaml.cs">
+      <DependentUpon>Footer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Layout_SingleColumn.xaml.cs">
+      <DependentUpon>Layout_SingleColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Layout_TwoColumn.xaml.cs">
+      <DependentUpon>Layout_TwoColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype1\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\AddDevice.xaml.cs">
+      <DependentUpon>AddDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\AddGadget.xaml.cs">
+      <DependentUpon>AddGadget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\CEIPDialog.xaml.cs">
+      <DependentUpon>CEIPDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ConfirmQuit.xaml.cs">
+      <DependentUpon>ConfirmQuit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ControlBase.cs" />
+    <Compile Include="Prototype2\DataMigrationLiveIdSelectionDialog.xaml.cs">
+      <DependentUpon>DataMigrationLiveIdSelectionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DataMigrationPromtDialog.xaml.cs">
+      <DependentUpon>DataMigrationPromtDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DataMigrationSingleLiveIDialog.xaml.cs">
+      <DependentUpon>DataMigrationSingleLiveIDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DataMigrationStatusDialog.xaml.cs">
+      <DependentUpon>DataMigrationStatusDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Device.cs" />
+    <Compile Include="Prototype2\DeviceInfo.xaml.cs">
+      <DependentUpon>DeviceInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DeviceInstalledNoNewData.xaml.cs">
+      <DependentUpon>DeviceInstalledNoNewData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DeviceInstalledNotConnected.xaml.cs">
+      <DependentUpon>DeviceInstalledNotConnected.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DeviceMenu.xaml.cs">
+      <DependentUpon>DeviceMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DeviceMenuItem.cs" />
+    <Compile Include="Prototype2\DevicesDetected.xaml.cs">
+      <DependentUpon>DevicesDetected.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\DownloadingXML.xaml.cs">
+      <DependentUpon>DownloadingXML.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\EditableTextBlock.cs" />
+    <Compile Include="Prototype2\Error.xaml.cs">
+      <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ErrorDeviceDriverDownload.xaml.cs">
+      <DependentUpon>ErrorDeviceDriverDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ErrorDeviceInstallation.xaml.cs">
+      <DependentUpon>ErrorDeviceInstallation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ErrorDeviceListDownload.xaml.cs">
+      <DependentUpon>ErrorDeviceListDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Error_Dialog.xaml.cs">
+      <DependentUpon>Error_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ForcedExpirationWarning.xaml.cs">
+      <DependentUpon>ForcedExpirationWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\FormatComplete.xaml.cs">
+      <DependentUpon>FormatComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\FormatDevicePrompt.xaml.cs">
+      <DependentUpon>FormatDevicePrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\FormatIncomplete.xaml.cs">
+      <DependentUpon>FormatIncomplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Header_NoBG.xaml..cs" />
+    <Compile Include="Prototype2\InstallingDevice.xaml.cs">
+      <DependentUpon>InstallingDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\LanguageSwitchConfirmation.xaml.cs">
+      <DependentUpon>LanguageSwitchConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\MultipleRecordPicker.xaml.cs">
+      <DependentUpon>MultipleRecordPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\NoAccount.xaml.cs">
+      <DependentUpon>NoAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\NoNewDataOnDevice.xaml.cs">
+      <DependentUpon>NoNewDataOnDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\NoPermission.xaml.cs">
+      <DependentUpon>NoPermission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\ObservableUIElementCollection.cs" />
+    <Compile Include="Prototype2\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Pages.cs" />
+    <Compile Include="Prototype2\PixelSnappedImage.cs" />
+    <Compile Include="Prototype2\PrototypeWindow.xaml.cs">
+      <DependentUpon>PrototypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RecordPicker.xaml.cs">
+      <DependentUpon>RecordPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RecordSelector.cs" />
+    <Compile Include="Prototype2\RefreshingData.xaml.cs">
+      <DependentUpon>RefreshingData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RemoveAccount.xaml.cs">
+      <DependentUpon>RemoveAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RemoveAccountError.xaml.cs">
+      <DependentUpon>RemoveAccountError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RemovedAccount.xaml.cs">
+      <DependentUpon>RemovedAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\RemovingAccount.xaml.cs">
+      <DependentUpon>RemovingAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\SelectFromList.xaml.cs">
+      <DependentUpon>SelectFromList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\SelectPersonForUpload.xaml.cs">
+      <DependentUpon>SelectPersonForUpload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\SetupDevicePagePrompt.xaml.cs">
+      <DependentUpon>SetupDevicePagePrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UE_CouldNotErase.xaml.cs">
+      <DependentUpon>UE_CouldNotErase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Updates.xaml.cs">
+      <DependentUpon>Updates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UpdatesFound.xaml.cs">
+      <DependentUpon>UpdatesFound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Upgrade.xaml.cs">
+      <DependentUpon>Upgrade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Upload.xaml.cs">
+      <DependentUpon>Upload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadComplete.xaml.cs">
+      <DependentUpon>UploadComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadCompleteError.xaml.cs">
+      <DependentUpon>UploadCompleteError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadCompleteMultiple.xaml.cs">
+      <DependentUpon>UploadCompleteMultiple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadCompleteMultipleErrors.xaml.cs">
+      <DependentUpon>UploadCompleteMultipleErrors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Uploading.xaml.cs">
+      <DependentUpon>Uploading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadingAlreadyInProgress.xaml.cs">
+      <DependentUpon>UploadingAlreadyInProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadingError.xaml.cs">
+      <DependentUpon>UploadingError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadingMultiple.xaml.cs">
+      <DependentUpon>UploadingMultiple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadMultiple.xaml.cs">
+      <DependentUpon>UploadMultiple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\UploadSettings.xaml.cs">
+      <DependentUpon>UploadSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\VersionConflict.xaml.cs">
+      <DependentUpon>VersionConflict.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\Waiting.xaml.cs">
+      <DependentUpon>Waiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype2\WindowMaster.cs" />
+    <Compile Include="ScreenCapture.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Setup\Installing.xaml.cs">
+      <DependentUpon>Installing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\SetupWindow.xaml.cs">
+      <DependentUpon>SetupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\ULA.xaml.cs">
+      <DependentUpon>ULA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.cs" />
+    <Compile Include="Tools\ScreenShotDemo.cs" />
+    <Page Include="Controls\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DeviceInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GhostMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GiveAccountAccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NothingHappened.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Options.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RecordPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RecordPicker2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RecordPicker3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RecordPicker4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RemoveAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RemovingAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SelectFromList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SwitchAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\UploadComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Uploading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\UploadSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Waiting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Prototype1\Dialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype1\Footer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype1\Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype1\Layout_SingleColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype1\Layout_TwoColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype1\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\AddDevice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\AddGadget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\CEIPDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\ConfirmQuit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DataMigrationLiveIdSelectionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DataMigrationPromtDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DataMigrationSingleLiveIDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DataMigrationStatusDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DeviceInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DeviceInstalledNoNewData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DeviceInstalledNotConnected.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DeviceMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DevicesDetected.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\DownloadingXML.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\ErrorDeviceDriverDownload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\ErrorDeviceInstallation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\ErrorDeviceListDownload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Error_Dialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\ForcedExpirationWarning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\FormatComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\FormatDevicePrompt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\FormatIncomplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Header_NoBG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\InstallingDevice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\LanguageSwitchConfirmation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\MultipleRecordPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\NoAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\NoNewDataOnDevice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\NoPermission.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Options.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\PrototypeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RecordPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RefreshingData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RemoveAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RemoveAccountError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RemovedAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\RemovingAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\SelectFromList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\SelectPersonForUpload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\SetupDevicePagePrompt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UE_CouldNotErase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UpdatesFound.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Upgrade.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Upload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadCompleteError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadCompleteMultiple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadCompleteMultipleErrors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Uploading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadingAlreadyInProgress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadingError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadingMultiple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadMultiple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\UploadSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\VersionConflict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype2\Waiting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setup\Installing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setup\SetupWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setup\ULA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RecordSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\WindowMaster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Methods.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Images\p2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hv.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ghost\Ghost.csproj">
+      <Project>{43f71ca7-a692-4d70-8dc3-944bb0155390}</Project>
+      <Name>Ghost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rooler\Rooler.csproj">
+      <Project>{b7871011-e713-46aa-b80d-5a523975be5b}</Project>
+      <Name>Rooler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ad.png" />
+    <Resource Include="Images\b.png" />
+    <Resource Include="Images\background.png" />
+    <Resource Include="Images\bg_header.png" />
+    <Resource Include="Images\bg_setup.png" />
+    <Resource Include="Images\bg_setup_blank.png" />
+    <Resource Include="Images\bob.png" />
+    <Resource Include="Images\btn_bg.png" />
+    <Resource Include="Images\btn_bg_disabled.png" />
+    <Resource Include="Images\btn_bg_hvr.png" />
+    <Resource Include="Images\btn_bg_n.png" />
+    <Resource Include="Images\btn_bg_n_hvr.png" />
+    <Resource Include="Images\btn_bg_n_press.png" />
+    <Resource Include="Images\btn_bg_press.png" />
+    <Resource Include="Images\bull.png" />
+    <Resource Include="Images\do.png" />
+    <Resource Include="Images\eric.png" />
+    <Resource Include="Images\flow.png" />
+    <Resource Include="Images\folder.png" />
+    <Resource Include="Images\hm.png" />
+    <Resource Include="Images\homemedics.png" />
+    <Resource Include="Images\icn_add.png" />
+    <Resource Include="Images\icn_arrw1.png" />
+    <Resource Include="Images\icn_arrw2.png" />
+    <Resource Include="Images\icn_camera.png" />
+    <Resource Include="Images\icn_camera_hvr.png" />
+    <Resource Include="Images\icn_close1.png" />
+    <Resource Include="Images\icn_close1_hvr.png" />
+    <Resource Include="Images\icn_help.png" />
+    <Resource Include="Images\icn_hide.png" />
+    <Resource Include="Images\icn_horiz.png" />
+    <Resource Include="Images\icn_horiz_hvr.png" />
+    <Resource Include="Images\icn_hv.png" />
+    <Resource Include="Images\icn_list.jpg" />
+    <Resource Include="Images\icn_list.png" />
+    <Resource Include="Images\icn_newwindow.png" />
+    <Resource Include="Images\icn_newwindow_hvr.png" />
+    <Resource Include="Images\icn_offline.png" />
+    <Resource Include="Images\icn_online.png" />
+    <Resource Include="Images\icn_pen.png" />
+    <Resource Include="Images\icn_pen_hvr.png" />
+    <Resource Include="Images\icn_remove.png" />
+    <Resource Include="Images\icn_save.png" />
+    <Resource Include="Images\icn_save_hvr.png" />
+    <Resource Include="Images\icn_show.png" />
+    <Resource Include="Images\icn_stop.png" />
+    <Resource Include="Images\icn_unpin.png" />
+    <Resource Include="Images\icn_unpin_hvr.png" />
+    <Resource Include="Images\icn_vert.png" />
+    <Resource Include="Images\icn_vert_hvr.png" />
+    <Resource Include="Images\icn_warning.png" />
+    <Resource Include="Images\lifescan.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\logo_about_hv.png" />
+    <Resource Include="Images\logo_ad.png" />
+    <Resource Include="Images\logo_hm.png" />
+    <Resource Include="Images\logo_lifescan.png" />
+    <Resource Include="Images\logo_omron.png" />
+    <Resource Include="Images\me2.png" />
+    <Resource Include="Images\needaccount.png" />
+    <Resource Include="Images\omron.png" />
+    <Resource Include="Images\bg_window.png" />
+    <Resource Include="Images\patty.png" />
+    <Resource Include="Images\wndw_bg.png" />
+    <Resource Include="Images\wndw_cnr_l.png" />
+    <Resource Include="Images\wndw_cnr_r.png" />
+    <Resource Include="Images\wndw_dialog_bg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,13 @@
+﻿<Window
+    x:Class="HVCC.Prototype2.PrototypeWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hvcc="clr-namespace:HVCC.Prototype2"
+
+    FontFamily="Arial"
+    FontSize="12"
+    ResizeMode="NoResize"
+    SizeToContent="WidthAndHeight"
+    Title="Microsoft HealthVault Connection Center"
+    Background="{x:Null}" WindowStartupLocation="CenterScreen" Icon="/HVCC;component/hv.ico">
+</Window>

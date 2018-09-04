@@ -1,0 +1,33 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.CIPDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    Style="{StaticResource UC_Dialog}"
+    WindowName="Dialog_CEIP"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="CEIP opt in dialog. There are a few scenarios where a user will see this dialog. 1st run, clicking on Help > CIP Terms, or user running HVCC from a different windows account for the first time.">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <TextBlock Style="{StaticResource DLG_Header}">
+               Help improve HealthVault Connection Center
+            </TextBlock>
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                The program collects anonymous statistics about your computer hardware and how you use Connection Center, without interrupting you. This information is sent to Microsoft to help us improve Connection Cneter. No Information will be used to Identify or contact you.
+                <Hyperlink Style="{StaticResource A1}">View privacy policy</Hyperlink>
+            </TextBlock>
+
+            <CheckBox Margin="0,20,0,0">
+                Join the Customer Experience Improvement Program for Connection Center
+            </CheckBox>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="True" Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Remove" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

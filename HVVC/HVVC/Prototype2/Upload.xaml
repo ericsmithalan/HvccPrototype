@@ -1,0 +1,26 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.Upload"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Upload Now"
+    Description="This page is only shown if new data is ready to be uploaded to HV."
+    IsDialog="False"
+    IsMenusVisible="True"
+    Loaded="Window_Upload_Loaded"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock x:Name="txt_title"  Style="{StaticResource WND_Header}">
+            12 new items ready for upload
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+            <Run>Upload items to a HealthVault record:</Run>
+        </TextBlock>
+
+        <p2:RecordPicker x:Name="RecordPicker" Margin="0,20,0,0" VerticalAlignment="Top" />
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Click="Button_Click" Style="{StaticResource ButtonAction}" Width="140" Content="Upload Now" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

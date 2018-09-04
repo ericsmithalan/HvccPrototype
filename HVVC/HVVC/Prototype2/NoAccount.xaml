@@ -1,0 +1,21 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.NoAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="No Account Found"
+    Description="Users will see this page if there are no accounts associated with HVCC"
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock  Style="{StaticResource WND_Header}">No HealthVault account found</TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+            <Run>You need a HealthVault account in order to upload the</Run>
+            <Run>12 new items</Run>
+            <Run>on this device.</Run>
+        </TextBlock>
+
+        <Button Click="Button_Click" VerticalAlignment="Top" Margin="0,30,0,0" Style="{StaticResource ButtonAction}" Width="250" Content="Continue online at HealthVault" />
+    </StackPanel>
+</p2:ControlBase>

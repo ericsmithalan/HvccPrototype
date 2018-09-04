@@ -1,0 +1,53 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UploadMultiple"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Upload Multiple Device Data Now"
+    Description="This page is only shown if user plugs in more than one device at a time. Not Real yet - just a test"
+    IsDialog="False"
+    IsMenusVisible="True"
+    Loaded="Window_Upload_Loaded"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock x:Name="txt_title"  Style="{StaticResource WND_Header}">
+            <Run>Upload data to HealthVault</Run>
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}" TextWrapping="Wrap" FontWeight="Normal" Margin="0,8,0,8" HorizontalAlignment="Center">
+                  Upload items to a HealthVault record.
+        </TextBlock>
+
+        <StackPanel VerticalAlignment="Top" Margin="0,15,0,0">
+
+            <StackPanel Orientation="Vertical" x:Name="SingleRecordPicker" HorizontalAlignment="Center">
+                <p2:RecordPicker Margin="0,0,0,0" VerticalAlignment="Top" />
+            </StackPanel>
+
+            <ScrollViewer x:Name="MultipleRecordPicker" HorizontalContentAlignment="Center" MaxHeight="180" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
+                        <TextBlock VerticalAlignment="Center" Style="{StaticResource T1}" Margin="0,0,8,0">User A:</TextBlock>
+                        <p2:RecordPicker Margin="0,0,0,0" VerticalAlignment="Top" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
+                        <TextBlock VerticalAlignment="Center" Style="{StaticResource T1}" Margin="0,0,8,0">User B:</TextBlock>
+                        <p2:RecordPicker Margin="0,0,0,0" VerticalAlignment="Top" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
+                        <TextBlock VerticalAlignment="Center" Style="{StaticResource T1}" Margin="0,0,8,0">User C:</TextBlock>
+                        <p2:RecordPicker Margin="0,0,0,0" VerticalAlignment="Top" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
+                        <TextBlock VerticalAlignment="Center" Style="{StaticResource T1}" Margin="0,0,8,0">User D:</TextBlock>
+                        <p2:RecordPicker Margin="0,0,0,0" VerticalAlignment="Top" />
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Margin="0,0,5,0" Content="Cancel" />
+            <Button x:Name="UploadButton" Click="Button_Click" Style="{StaticResource ButtonAction}" Width="130" Content="Next Device" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

@@ -1,0 +1,27 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.LanguageSwitchConfirmation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Language Switch Confirmation"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="Shown when the user changes language settings. Not sure where this happens?"
+   Style="{StaticResource UC_Dialog}">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <TextBlock Style="{StaticResource DLG_Header}">
+                You've selected a new language to use with Connection Center
+            </TextBlock>
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                Your change will take effect the next time you exit and restart Connection Center. When you're ready to exit, click the Tools menu, then click Exit. To restart, select HealthVault Connection Center on your windows program menu.
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Close" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

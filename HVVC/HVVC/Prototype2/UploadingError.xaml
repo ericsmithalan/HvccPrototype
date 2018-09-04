@@ -1,0 +1,33 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UploadingError"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Upload Error"
+    Description="If there is an upload error users will see this."
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <p2:PixelSnappedImage DockPanel.Dock="Left" VerticalAlignment="Top" Source="../images/icn_stop.png" Width="24" Height="24" />
+            <TextBlock DockPanel.Dock="Top"  Style="{StaticResource WND_Header}" VerticalAlignment="Top" TextWrapping="Wrap" Margin="7,0,0,0">
+                Upload incomplete
+            </TextBlock>
+        </StackPanel>
+
+        <TextBlock  Style="{StaticResource WND_SubHeader}" TextWrapping="Wrap" TextAlignment="Center">
+            We couldn't upload any items. Sum up possible reasons and tell them to click on the link below to get more detailed info. No bullets!
+        </TextBlock>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,15,0,0">
+            <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,0,0,0">
+                <Hyperlink Style="{StaticResource A1}">Learn more about this error</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Click="Button_Click" Style="{StaticResource ButtonStandard}" Content="Start over" Margin="0,0,10,0" />
+            <Button Click="Button_Click_1" Style="{StaticResource ButtonAction}" Width="120" Content="Try again" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

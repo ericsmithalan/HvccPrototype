@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="HVCC.Setup.ULA"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="Setup_EULA">
+
+    <Grid Margin="20,20,20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="305"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Style="{StaticResource WND_Header}" FontSize="16" HorizontalAlignment="Left">
+                    <Run>HealthVault Connection Center License Terms</Run>
+            </TextBlock>
+
+            <RichTextBox x:Name="rtf_eula" Margin="0,40,0,0" VerticalScrollBarVisibility="Visible" Height="210" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Click="Button_Click" Content="Accept" Height="25" Padding="20,0,20,0" Margin="0,0,10,0" HorizontalAlignment="Right" />
+            <Button Click="Button_Click_1" Content="Decline" Height="25" Padding="20,0,20,0" HorizontalAlignment="Right" />
+        </StackPanel>
+    </Grid>
+</UserControl>

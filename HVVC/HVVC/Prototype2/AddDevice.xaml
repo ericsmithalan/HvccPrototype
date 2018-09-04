@@ -1,0 +1,42 @@
+﻿<p2:ControlBase x:Class="HVCC.Prototype2.AddDevice"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Add Device"
+    IsDialog="False"
+    IsMenusVisible="True"
+    Description="If no devices are detected on the computer at all the user will see this page. A user can also access this page by clickin on Devices > Add New Device"
+    IsDeviceRelatedPage="False">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}" Margin="0,0,0,0">Connect your device to your computer</TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">Then wait a minute while Connection Center finds your device.</TextBlock>
+
+        <TextBlock Style="{StaticResource T1}" Text="Looking for plugged in devices..." Margin="0,30,0,5" HorizontalAlignment="Center" />
+        <ProgressBar Style="{StaticResource PB_Progress}" Margin="0,0,0,0" />
+
+        <Border Style="{StaticResource BRDR_Info}" Margin="0,30,0,0">
+            <StackPanel Margin="0,0,0,0">
+                <TextBlock Text="Nothing Happened?" Margin="0,0,0,6"  Style="{StaticResource ContentHeading}" />
+                <BulletDecorator Margin="0,0,0,0">
+                    <BulletDecorator.Bullet>
+                        <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                    </BulletDecorator.Bullet>
+                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource T1}" Margin="10,0,0,0">
+                        Disconnect and reconnect to try again, or
+                    </TextBlock>
+                </BulletDecorator>
+                <BulletDecorator Margin="0,5,0,0">
+                    <BulletDecorator.Bullet>
+                        <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                    </BulletDecorator.Bullet>
+                    <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}" x:Name="hl_deviceList" Click="hl_deviceList_Click">Select a device from a list</Hyperlink>
+                    </TextBlock>
+                </BulletDecorator>
+            </StackPanel>
+        </Border>
+        <StackPanel Style="{StaticResource SP_Buttons}" x:Name="sp_buttons" Visibility="Collapsed">
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

@@ -1,0 +1,34 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.ErrorDeviceListDownload"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Device List Download Error"
+    Description="User will see this if there is an error during device device XML download"
+    IsDialog="False"
+    IsMenusVisible="False">
+    <StackPanel Style="{StaticResource SP_Main}">
+        <Grid HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <p2:PixelSnappedImage Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Source="../images/icn_stop.png" Width="24" Height="24" />
+            <TextBlock Grid.Column="1" Style="{StaticResource WND_Header}" TextWrapping="Wrap">We couldn't display the list of devices available for setup.</TextBlock>
+        </Grid>
+
+        <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" TextAlignment="Center"  Margin="0,10,0,0">
+            Check your network connection or see link below to troubleshoot.
+        </TextBlock>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,15,0,0">
+            <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,0,0,0">
+                <Hyperlink Style="{StaticResource A1}">Troubleshoot</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Content="Close" Margin="0,0,10,0" />
+            <Button Style="{StaticResource ButtonAction}" Width="120" Content="Try again" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

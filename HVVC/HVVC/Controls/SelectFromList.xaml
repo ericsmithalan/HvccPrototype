@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="HVCC.Controls.SelectFromList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="345">
+    <StackPanel Margin="0,20,0,0">
+        <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="Select the kind of device you want to add:" />
+        <ComboBox Margin="0,3,0,0" Width="200" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem>Device Type</ComboBoxItem>
+            <ComboBoxItem>Device Type</ComboBoxItem>
+            <ComboBoxItem>Device Type</ComboBoxItem>
+            <ComboBoxItem>Device Type</ComboBoxItem>
+            <ComboBoxItem>Device Type</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Visibility="Collapsed" x:Name="sp_brand">
+            <TextBlock Margin="0,10,0,0" Style="{StaticResource T1}" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="Select the brand:" />
+            <ComboBox Margin="0,3,0,0" Width="200" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged_1">
+                <ComboBoxItem>Brand name</ComboBoxItem>
+                <ComboBoxItem>Brand name</ComboBoxItem>
+                <ComboBoxItem>Brand name</ComboBoxItem>
+                <ComboBoxItem>Brand name</ComboBoxItem>
+                <ComboBoxItem>Brand name</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Margin="0,10,0,0" Style="{StaticResource T1}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Run>Don't see your device?</Run> <Hyperlink Click="Hyperlink_Click">See all compatible devices</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Visibility="Collapsed" x:Name="sp_info">
+            <TextBlock Margin="0,30,0,0" Style="{StaticResource H2}" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="You can now add:" />
+            <TextBlock Margin="0,5,0,0" Style="{StaticResource T1}" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="Device, Device, Device, Device, Device, Device, Device, Device, Device, Device, Device" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+            <Button Style="{StaticResource Btn}" Content="Cancel" Margin="0,0,15,0" HorizontalAlignment="Left" Click="Button_Click" />
+            <Button x:Name="btn_install" Style="{StaticResource BtnAction}" IsEnabled="False" Content="Install" HorizontalAlignment="Left" Click="btn_install_Click" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

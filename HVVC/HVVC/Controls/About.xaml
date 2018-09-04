@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="HVCC.Controls.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hvcc="clr-namespace:HVCC.Controls">
+    <StackPanel>
+        <hvcc:Bitmap Width="274" Height="81" VerticalAlignment="Top" HorizontalAlignment="Center" Source="../images/logo_about_hv.png" />
+        <TextBlock Margin="0,20,0,0" HorizontalAlignment="Center">
+            Microsoft HealthVault Connection Center
+        </TextBlock>
+        <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">
+            Version 2.3.2269.4912
+        </TextBlock>
+        <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">
+            Microsoft Corporation. All rights reserved.
+        </TextBlock>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,40,0,0">
+            <Button IsCancel="False" Style="{StaticResource BtnAction}" Click="Button_Click" HorizontalAlignment="Center" Content="OK" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

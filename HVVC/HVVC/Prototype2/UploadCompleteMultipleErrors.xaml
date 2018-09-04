@@ -1,0 +1,37 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UploadCompleteMultipleErrors"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Upload Complete With Multiple Errors"
+    Description="The upload was succesfull but there were other errors"
+    IsDialog="False"
+    IsDeviceRelatedPage="True"
+    IsMenusVisible="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}">
+           We uploaded 12 items to Eric's health record.
+        </TextBlock>
+        <Border Style="{StaticResource BRDR_Info}" Margin="0,25,0,0" Padding="18">
+            <StackPanel Orientation="Vertical">
+                <Grid HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <p2:PixelSnappedImage Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Source="../images/icn_warning.png" Width="16" Height="16" />
+                    <TextBlock Grid.Column="1" Style="{StaticResource T1}" VerticalAlignment="Bottom"  FontWeight="Bold" TextWrapping="Wrap">Multiple things happened.</TextBlock>
+                </Grid>
+                <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" TextAlignment="Center"  Margin="0,5,0,0">
+                  Sum up possible reasons and tell them to click on the link below to get more detailed info. No bullets!
+                </TextBlock>
+                <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,10,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Take action</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonAction}" Width="200" Margin="0,0,0,10" Content="View data in HealthVault" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

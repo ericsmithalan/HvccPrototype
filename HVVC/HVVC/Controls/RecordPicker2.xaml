@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="HVCC.Controls.RecordPicker2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hvcc="clr-namespace:HVCC.Controls">
+    <UserControl.Resources>
+        <DataTemplate x:Key="ComboTemplate">
+            <Border Padding="5" Margin="0,0,10,0">
+                <DockPanel>
+                    <hvcc:Bitmap DockPanel.Dock="Left" x:Name="img_user" Grid.Row="1" Grid.Column="0" Width="47" Height="47" VerticalAlignment="Top" HorizontalAlignment="Left" Source="{Binding Path=ImageFile}" />
+                    <TextBlock DockPanel.Dock="Bottom" Margin="10,0,0,14" Style="{StaticResource T1}" Text="{Binding Path=Relations}" />
+                    <TextBlock DockPanel.Dock="Left" Margin="10,3,0,0" Style="{StaticResource T1}" Text="{Binding Path=FirstName}" />
+                    <TextBlock DockPanel.Dock="Left" Margin="3,3,0,0" Style="{StaticResource T1}" Text="{Binding Path=LastName}" />
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Margin="0,25,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Select the person who's data you will upload:" Margin="0,0,0,0" Style="{StaticResource TA}" />
+        <ComboBox Grid.Row="1" Margin="0,10,0,0" Grid.Column="1" ItemTemplate="{StaticResource ComboTemplate}" x:Name="cmbPeople" SelectionChanged="ComboBox_SelectionChanged" VerticalAlignment="Top" BorderBrush="#c0c9cc" Background="White" Width="200" Padding="5" HorizontalAlignment="Left" />
+
+        <Button Grid.Row="2" Style="{StaticResource BtnAction}" Grid.Column="0" Width="180" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,50,0,0" Content="Upload now" Click="Button_Click" />
+    </Grid>
+</UserControl>

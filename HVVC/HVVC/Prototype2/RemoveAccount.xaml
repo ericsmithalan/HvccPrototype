@@ -1,0 +1,43 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.RemoveAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Remove Account"
+    Description="Remove person prompt. Users can get to this by going to Tools > Accounts > Remove"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Style="{StaticResource UC_Dialog}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="ComboTemplate">
+            <Border Padding="5" Margin="0,0,10,0" CornerRadius="0">
+                <DockPanel>
+                    <p2:PixelSnappedImage Visibility="Visible" DockPanel.Dock="Left" x:Name="img_user" Grid.Row="1" Grid.Column="0" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Source="{Binding Path=ImageFile}" />
+                    <TextBlock DockPanel.Dock="Left" Margin="10,3,0,0" Style="{StaticResource T1}" Text="{Binding Path=FirstName}" />
+                    <TextBlock DockPanel.Dock="Left" Margin="3,3,0,0" Style="{StaticResource T1}" Text="{Binding Path=LastName}" />
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <TextBlock Style="{StaticResource DLG_Header}">
+                Remove Person from Connection Center
+            </TextBlock>
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                <Run>This will also erase settings and stored data associated with your HealthVault account from this computer. You will need to restore account access in order to upload later. </Run>
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="0,20,0,0">
+                <Run FontWeight="Bold">Select a Person</Run>
+            </TextBlock>
+            <ComboBox HorizontalAlignment="Left" Background="{StaticResource SubItemGradient}" x:Name="RecordPicker" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="ComboBox_SelectionChanged" VerticalAlignment="Top" BorderBrush="{StaticResource StandardBorderColor}" Width="200" Margin="0,5,0,0" Padding="0" />
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="True" Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Remove" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

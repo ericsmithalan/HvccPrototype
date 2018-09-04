@@ -1,0 +1,73 @@
+﻿<UserControl
+    x:Class="Ghost.Toolbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctl="clr-namespace:Ghost.Controls"
+    xmlns:btn="clr-namespace:Ghost.Controls.Buttons"
+    xmlns:ghost="clr-namespace:Ghost">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <DockPanel
+        x:Name="MenuBarFrame"
+        Grid.Row="0"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Background="{StaticResource MenuGrad}"
+        Width="{Binding Wndw.ActualWidth}">
+
+        <ctl:Button
+            x:Name="Btn_Open"
+            ToolTip="Open"
+            IsDropdown="True"
+            AllowSelect="True"
+            DockPanel.Dock="Left"
+            Width="25"
+            Style="{StaticResource ButtonStyle}"
+            Height="25"
+            Margin="5,5,0,5"
+            Visibility="Visible"
+            Icon="images/icn_folder.png"
+            Click="Btn_Open_Click"
+            SelectedIcon="images/icn_folder_hvr.png"
+            HoverIcon="images/icn_folder_hvr.png" />
+
+        <Menu Style="{StaticResource MenuButtonStyle}">
+            <ctl:ButtonMenu
+                x:Name="Btn_Open_Menu"
+                ToolTip="Open"
+                DockPanel.Dock="Left"
+                Width="15"
+                Height="25"
+                ItemTemplate="{StaticResource FileMenuItemTemplate}"
+                ItemsSource="{Binding Source={StaticResource FileCollection},IsAsync=True }"
+                Margin="0,5,0,5"
+                Visibility="Visible"
+                MenuItem.Click="Btn_Open_Menu_Click" />
+        </Menu>
+        <btn:Save DockPanel.Dock="Left" x:Name="Btn_Save" Margin="15,5,0,5" />
+        <btn:Screenshot DockPanel.Dock="Left" x:Name="Btn_Screenshot" Margin="5,5,0,5" />
+        <btn:Rulers DockPanel.Dock="Left" Margin="15,5,0,5"  x:Name="Btn_Rulers" Show="Both" />
+        <btn:Draw DockPanel.Dock="Left" x:Name="Btn_Draw"  Margin="5,5,0,5" />
+        <btn:Erase DockPanel.Dock="Left" x:Name="Btn_EraseDrawing"  Margin="5,5,0,5" />
+        <btn:Text DockPanel.Dock="Left" x:Name="Btn_Font"  Margin="15,5,0,5" />
+        <Slider
+            x:Name="Sldr_Opacity"
+            ToolTip="Opacity"
+            DockPanel.Dock="Left"
+            Width="100"
+            Minimum="0"
+            Value="100"
+            Maximum="100"
+            Visibility="Visible"
+            Margin="20,0,20,0"
+            ValueChanged="Sldr_Opacity_ValueChanged"
+            Height="25" />
+        <btn:Close x:Name="Btn_Close" Margin="0,5,5,5" HorizontalAlignment="Right" DockPanel.Dock="Right" />
+    </DockPanel>
+</UserControl>

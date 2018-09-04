@@ -1,0 +1,25 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DeviceInstalledNotConnected"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Device Installed Not Connected"
+    Description="User sees this screen if they navigate to a device that is installed but is not connected."
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}">
+           This device is not connected.
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+            Whenever you have new device data, connect your device to your computer to upload.
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}" Margin="0,25,0,0">
+            Your last upload was on January 1 2010
+        </TextBlock>
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonAction}" Width="200" Margin="0,0,0,10" Content="View data in HealthVault" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

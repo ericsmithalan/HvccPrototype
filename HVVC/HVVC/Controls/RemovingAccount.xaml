@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="HVCC.Controls.RemovingAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hvcc="clr-namespace:HVCC.Controls"
+    Width="350">
+    <StackPanel Margin="0,0,0,0">
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Removing Account" Margin="0,0,0,5" Style="{StaticResource H1}" />
+        <hvcc:Bitmap Width="100" Height="86" VerticalAlignment="Top" HorizontalAlignment="Center" Source="../images/me2.png" />
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,9,0,8" Style="{StaticResource T1}">
+            <Run>Removing</Run>
+            <Run FontWeight="Bold">Eric's HealthVault Account</Run>
+            <Run>from Connection Center</Run>
+        </TextBlock>
+        <ProgressBar x:Name="progress" IsIndeterminate="True" HorizontalAlignment="Center" Width="250" VerticalAlignment="Top" Height="20" Margin="0,5,0,0" />
+        <Button Style="{StaticResource Btn}" HorizontalAlignment="Center" Margin="0,35,0,0" Content="Cancel" />
+    </StackPanel>
+</UserControl>

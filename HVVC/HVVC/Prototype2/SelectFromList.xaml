@@ -1,0 +1,44 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.SelectFromList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Select Device From List"
+    Description="If HVCC can't find the device, users have to install in manually here. This can be acessed from Add Device page and Devices found."
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="False">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}" Margin="0,0,0,10">
+            Select a device to install
+        </TextBlock>
+
+        <StackPanel HorizontalAlignment="Center" Margin="0,25,0,0" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,0,0">
+                <TextBlock Margin="5,0,0,5" Style="{StaticResource T1}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="Select a type:" />
+                <ListBox x:Name="lb_type" BorderBrush="{StaticResource StandardBorderColor}" FontFamily="Arial" Height="85" Margin="0,0,0,0" Padding="3" Width="190" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged">
+                    <ListBoxItem>Blood Glucose Monitor</ListBoxItem>
+                    <ListBoxItem>Blood Pressure Monitor</ListBoxItem>
+                    <ListBoxItem>Peak Flow Meter</ListBoxItem>
+                    <ListBoxItem>Pedometer</ListBoxItem>
+                    <ListBoxItem>Weight Scale</ListBoxItem>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"  Visibility="Visible" x:Name="sp_brand">
+                <TextBlock Margin="5,0,0,5" Style="{StaticResource T1}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="Select a brand:" />
+                <ListBox BorderBrush="{StaticResource StandardBorderColor}" BorderThickness="0,1,1,1" FontFamily="Arial" Height="85" x:Name="lb_brand"  Margin="0,0,0,0" Padding="3" Width="165" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged_1">
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
+        <Border Padding="5,10,10,0" x:Name="sp_info" Margin="0,10,0,0">
+            <StackPanel>
+                <TextBlock Margin="0,0,0,0" Style="{StaticResource H2}" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="You can now add:" />
+                <TextBlock x:Name="tb_models" Margin="0,5,0,0" Style="{StaticResource T1}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </StackPanel>
+        </Border>
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" Margin="0,0,10,0" Click="Button_Click" />
+            <Button x:Name="btn_install" Style="{StaticResource ButtonAction}" IsEnabled="False" Content="Install" Click="btn_install_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

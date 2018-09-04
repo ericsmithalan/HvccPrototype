@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="Ghost.Wrapper.Control"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctl="clr-namespace:Ghost.Controls"
+    xmlns:ghost="clr-namespace:Ghost"
+    Background="{x:Null}"
+    x:Name="Ctl_ControlWrapper">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel SnapsToDevicePixels="True" x:Name="WindowGrid" Orientation="Vertical">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="images/windowbg.png" TileMode="Tile" />
+        </StackPanel.Background>
+        <ghost:Toolbar CloseButtonState="Pin" SnapsToDevicePixels="True" x:Name="Tools" DockPanel.Dock="Top" />
+        <InkCanvas
+                    MaxHeight="600"
+                    DockPanel.Dock="Top"
+                    Background="{x:Null}"
+                    x:Name="ContentCanvas"
+                    SnapsToDevicePixels="True"
+                    EditingMode="None">
+
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="#5fd21a" Width="1" />
+            </InkCanvas.DefaultDrawingAttributes>
+            <Grid x:Name="WorkSpaceParent">
+                <Grid SnapsToDevicePixels="True" x:Name="WorkSpace" Background="{x:Null}"></Grid>
+            </Grid>
+        </InkCanvas>
+    </StackPanel>
+</UserControl>

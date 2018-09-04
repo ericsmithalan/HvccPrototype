@@ -1,0 +1,21 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.RemovedAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Account Removed"
+    Description="Confirmation showing that record was removed."
+    IsDialog="True"
+    IsMenusVisible="False"
+    Style="{StaticResource UC_Dialog}">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+            <TextBlock Style="{StaticResource DLG_Header}" Text="Person removed" />
+            <TextBlock Style="{StaticResource DLG_SubHeader}" Text="Eric Smith's access was removed from Connection Center." />
+        </StackPanel>
+        <StackPanel Style="{StaticResource SP_Buttons}" DockPanel.Dock="Bottom" Margin="0">
+            <Button Click="Button_Click" Style="{StaticResource ButtonAction}" Content="OK" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

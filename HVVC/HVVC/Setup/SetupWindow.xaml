@@ -1,0 +1,14 @@
+﻿<Window x:Class="HVCC.Setup.SetupWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+    Title="HealthVault Connection Center Setup" Height="399" Width="513">
+    <Window.Background>
+        <ImageBrush ImageSource="../images/bg_setup_blank.png" TileMode="None" AlignmentX="Left" AlignmentY="Top" Stretch="None" />
+    </Window.Background>
+    <Border x:Name="border_main" BorderBrush="Black" BorderThickness="1">
+
+        <StackPanel Grid.Row="0" x:Name="grid_main" Orientation="Vertical">
+        </StackPanel>
+    </Border>
+</Window>

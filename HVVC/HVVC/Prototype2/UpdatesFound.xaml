@@ -1,0 +1,28 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UpdatesFound"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Updates Found"
+    Description="If HVCC updates are found, users will see this page"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Style="{StaticResource UC_Dialog}">
+    <DockPanel Style="{StaticResource DP_Dialog}">
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock DockPanel.Dock="Top"  Style="{StaticResource DLG_Header}">
+                New updates were found
+            </TextBlock>
+        </StackPanel>
+
+        <TextBlock  DockPanel.Dock="Top" Style="{StaticResource DLG_SubHeader}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec mauris lacus. Donec elementum malesuada dolor a imperdiet.
+        </TextBlock>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Style="{StaticResource ButtonAction}" Content="Install Updates" Width="150"  Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="HVCC.Controls.NothingHappened"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Width="345">
+    <StackPanel>
+        <TextBlock Style="{StaticResource T1}" Text="Looking for plugged in devices..." Margin="0,30,0,6" HorizontalAlignment="Left" />
+        <ProgressBar IsIndeterminate="True" Width="200" Height="15" Margin="0,0,0,20"  HorizontalAlignment="Left" />
+        <Border BorderBrush="#c0c9cc"  Margin="0,40,0,0" BorderThickness="1" CornerRadius="5" Padding="25,15,15,20">
+            <StackPanel Margin="0,0,0,0">
+                <TextBlock Text="Nothing Happened?" Margin="0,0,0,6"  Style="{StaticResource H2}" />
+                <BulletDecorator Margin="0,0,0,0">
+                    <BulletDecorator.Bullet>
+                        <Image Source="../images/bull.png" Width="4" Height="4" />
+                    </BulletDecorator.Bullet>
+                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource T1}" Margin="10,0,0,0">
+                        Disconnect and reconnect to try again, or
+                    </TextBlock>
+                </BulletDecorator>
+                <BulletDecorator Margin="0,5,0,0">
+                    <BulletDecorator.Bullet>
+                        <Image Source="../images/bull.png" Width="4" Height="4" />
+                    </BulletDecorator.Bullet>
+                    <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}" x:Name="hl_deviceList" Click="hl_deviceList_Click">Select a device from a list</Hyperlink>
+                    </TextBlock>
+                </BulletDecorator>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>

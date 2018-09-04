@@ -1,0 +1,20 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UploadComplete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Upload Complete"
+    Description="This is the final page of the upload sequence."
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}">
+           12 items were uploaded to Eric's HealthVault record
+        </TextBlock>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button x:Name="Button" Style="{StaticResource ButtonAction}" Width="300" Margin="0,0,0,10" Content="View data in HealthVault" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

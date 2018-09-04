@@ -1,0 +1,139 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DeviceInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="Displays information about the device. Manufacturers provide information inside this dialog"
+    WindowName="Device Info">
+
+    <DockPanel Margin="40,30,40,40">
+
+        <StackPanel DockPanel.Dock="Top">
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                    <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0" Orientation="Horizontal">
+                        <p2:PixelSnappedImage DockPanel.Dock="Left" VerticalAlignment="Top" x:Name="img_user" Width="25" Height="25" />
+
+                        <TextBlock x:Name="tb_device" Style="{StaticResource DLG_Header}"  Margin="5,0,0,0">
+                        </TextBlock>
+                    </StackPanel>
+                    <p2:PixelSnappedImage DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="img_manufacturer" Margin="0,0,0,0" Width="100" Height="50" Source="../images/logo_omron.png" />
+                </DockPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TextBlock Style="{StaticResource T1}" Margin="0,0,0,0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a arcu quis sem tristique luctus. Fusce mattis porta ornare.
+                    </TextBlock>
+                    <BulletDecorator Margin="25,15,0,0">
+                        <BulletDecorator.Bullet>
+                            <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        Duis varius vulputate felis non ultricies.
+                        </TextBlock>
+                    </BulletDecorator>
+                    <BulletDecorator Margin="25,5,0,0">
+                        <BulletDecorator.Bullet>
+                            <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        Pellentesque a arcu quis sem tristique luctus.
+                        </TextBlock>
+                    </BulletDecorator>
+                    <BulletDecorator Margin="25,5,0,0">
+                        <BulletDecorator.Bullet>
+                            <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Style="{StaticResource T1}" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        Cras id metus in nibh sagittis auctor vel eu tellus.
+                        </TextBlock>
+                    </BulletDecorator>
+                </StackPanel>
+                <ScrollViewer Grid.Column="0" Grid.Row="2"  Margin="0,20,0,0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Height="100">
+                    <StackPanel>
+
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Pellentesque a arcu quis</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Pellentesque</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Pellentesque a arcu </Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Pellentesque a arcu quis sem</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Quis sem tristique</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Quis sem tristique</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Quis sem tristique</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                        <BulletDecorator Margin="0,5,0,0">
+                            <BulletDecorator.Bullet>
+                                <p2:PixelSnappedImage Source="../images/bull.png" Width="4" Height="4" />
+                            </BulletDecorator.Bullet>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <Hyperlink Style="{StaticResource A1}">Quis sem tristique</Hyperlink>
+                            </TextBlock>
+                        </BulletDecorator>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonAction}" Content="Close" Click="Button_Click" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

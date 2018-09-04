@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="HVCC.Controls.GiveAccountAccess"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="0,0,0,0">
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Give Connection Center acccess to an account in HealthVault" Margin="0,0,0,10" Style="{StaticResource H1}" />
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,9,0,8" Style="{StaticResource T1}">
+            Connection Center currently doesn't have access to an account in HealthVault and can't upload health device data. Please go to HealthVault Web site, where you will continue with steps to allow access to your account.
+        </TextBlock>
+        <Button Style="{StaticResource BtnAction}"  Width="250" Click="Button_Click" HorizontalAlignment="Center" Margin="0,35,0,0" Content="Continue online at HealthVault" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,132 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2.RecordSelector">
+
+    <!-- RecordPicker
+    <LinearGradientBrush x:Key="RecordPickerGraidient" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#ffffff" Offset="0.0" />
+                <GradientStop Color="#efefef" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="RecordPickerGraidientHvr" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#f3faff" Offset="0.0" />
+                <GradientStop Color="#cfeaff" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="RecordPickerGraidientPress" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+              <GradientStop Color="#cfeaff" Offset="0.0" />
+                <GradientStop Color="#f3faff" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <Style TargetType="{x:Type p2:DropDown}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MaxWidth" Value="200" />
+        <Setter Property="MinHeight" Value="70" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type p2:DropDown}">
+                    <Grid>
+                        <ToggleButton Name="ToggleButton" Template="{StaticResource ComboBoxToggleButton}" Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+                        </ToggleButton>
+                        <ContentPresenter Margin="3,3,23,3" HorizontalAlignment="Left" Name="ContentSite" VerticalAlignment="Center"
+                                          ContentTemplate="{TemplateBinding p2:DropDown.SelectionBoxItemTemplate}"
+                                          Content="{TemplateBinding p2:DropDown.SelectionBoxItem}"
+                                          IsHitTestVisible="False" />
+
+                        <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" VerticalOffset="-3" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                            <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder" CornerRadius="0" Background="{StaticResource HVLightBlue}" BorderThickness="1" BorderBrush="{StaticResource StandardBorderColor}" />
+                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+                        </Trigger>
+                        <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                            <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0" />
+                            <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type p2:DropDownRecord}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type p2:DropDownRecord}">
+                    <Border x:Name="Border" Padding="6" Margin="0,0,10,0" CornerRadius="0">
+                        <DockPanel>
+                            <Border Width="57" Height="52"  CornerRadius="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="../images/folder.png" Stretch="None" />
+                                </Border.Background>
+                                <ctl:Bitmap x:Name="img_user" Margin="0,7,0,0" Width="33" Height="33" Source="{TemplateBinding PersonImage}" />
+                            </Border>
+                            <TextBlock DockPanel.Dock="Bottom" Margin="10,0,0,10" Style="{StaticResource T1}" Text="{TemplateBinding PersonRelation}" />
+                            <TextBlock DockPanel.Dock="Left" Margin="10,8,0,0" FontWeight="Bold" Style="{StaticResource T1}" Text="{TemplateBinding PersonName}" />
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+        <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="3" Background="{StaticResource RecordPickerGraidient}" BorderBrush="{StaticResource StandardBorderColor}" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Path x:Name="Arrow" Grid.Column="1" Fill="{StaticResource HVGlyph}" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource RecordPickerGraidientHvr}" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource RecordPickerGraidientPress}" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsPressed" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource RecordPickerGraidientPress}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource StandardBorderColor}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource StandardBorderColor}" />
+                <Setter Property="Foreground" Value="{StaticResource StandardBorderColor}" />
+                <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource StandardBorderColor}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+   -->
+</ResourceDictionary>

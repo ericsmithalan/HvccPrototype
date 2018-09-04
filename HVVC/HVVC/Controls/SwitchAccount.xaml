@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="HVCC.Controls.SwitchAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="10,30,0,0">
+        <RadioButton Style="{StaticResource R1}" Checked="RadioButton_Checked" Margin="0,0,0,0">
+            <TextBlock Style="{StaticResource T1}">
+                Remove any current users from Connection Center and allow access to a different HealthVault account
+            </TextBlock>
+        </RadioButton>
+        <RadioButton Style="{StaticResource R1}" Checked="RadioButton_Checked" Margin="0,15,0,0">
+            <TextBlock Style="{StaticResource T1}">
+                Without removing anyone from Connection Center, log on to this computer as another Windows user and allow access to different HealthVault account
+            </TextBlock>
+        </RadioButton>
+
+        <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+            <Button IsCancel="False" x:Name="btn_action" Click="btn_action_Click" Style="{StaticResource BtnAction}" IsEnabled="False" HorizontalAlignment="Left" Content="Continue" Margin="0,0,10,0" />
+            <Button IsCancel="True" Grid.Column="0" Click="btn_action_Click" Style="{StaticResource Btn}" HorizontalAlignment="Left" Content="Cancel" Margin="0,0,0,0" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

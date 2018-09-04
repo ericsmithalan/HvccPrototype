@@ -1,0 +1,33 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DevicesDetected"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Devices Detected"
+    IsDialog="False"
+    IsMenusVisible="True"
+    Description="If HVCC detects devices, users will be taken to this screen. In the event of multiple devices, users will be taken back to this screen after the first device is installed. If the user cancels, to come back they can click on Devices > Add new Device and this page will be displayed instead of the connect your device page."
+    IsDeviceRelatedPage="False">
+
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+
+        <TextBlock  Style="{StaticResource WND_Header}" Margin="0,0,0,0">
+            New device found on your Computer
+        </TextBlock>
+        <TextBlock  Style="{StaticResource WND_SubHeader}" TextAlignment="Center" HorizontalAlignment="Center">
+            Enable uploading to HealthVualt from:
+        </TextBlock>
+
+        <ScrollViewer Margin="0,15,0,0" Padding="0,0,0,0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="150"  HorizontalContentAlignment="Center">
+            <StackPanel Margin="0,0,0,0"  x:Name="DeviceList"></StackPanel>
+        </ScrollViewer>
+
+        <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,25,0,0">
+                <Hyperlink Style="{StaticResource A1}" Click="Hyperlink_Click">Add a different device</Hyperlink>
+        </TextBlock>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button x:Name="sp_buttons" Visibility="Collapsed" IsCancel="True" Style="{StaticResource ButtonStandard}" Click="Button_Click_2" Margin="0,0,5,0" Content="Cancel" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="Ghost.Wrapper.Window"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctl="clr-namespace:Ghost.Controls"
+    xmlns:ghost="clr-namespace:Ghost"
+    AllowsTransparency="True"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    MaxWidth="1500"
+    MinWidth="350"
+    MinHeight="150"
+    MaxHeight="900"
+    WindowStyle="None"
+    ResizeMode="CanResizeWithGrip"
+    Background="{x:Null}"
+    SizeToContent="WidthAndHeight"
+    Title="Ghost"
+    x:Name="Wndw">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border x:Name="WindowBorder" Style="{StaticResource WindowBorder}">
+        <Border x:Name="WindowInnerBorder" Style="{StaticResource WindowInnerBorder}">
+            <DockPanel>
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="images/windowbg.png" TileMode="Tile" />
+                </DockPanel.Background>
+
+                <ghost:Toolbar CloseButtonState="Close" SnapsToDevicePixels="True" DockPanel.Dock="Top" x:Name="Tools" />
+                <ScrollViewer SnapsToDevicePixels="True" Background="{x:Null}" DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <InkCanvas
+                        Background="{x:Null}"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        EditingMode="None"
+                        SnapsToDevicePixels="True"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        x:Name="ContentCanvas">
+                        <InkCanvas.DefaultDrawingAttributes>
+                            <DrawingAttributes Color="#5fd21a" Width="1" />
+                        </InkCanvas.DefaultDrawingAttributes>
+                        <Grid x:Name="WorkSpaceParent">
+                            <Grid SnapsToDevicePixels="True"  x:Name="WorkSpace" Background="{x:Null}"></Grid>
+                        </Grid>
+                    </InkCanvas>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+    </Border>
+</Window>

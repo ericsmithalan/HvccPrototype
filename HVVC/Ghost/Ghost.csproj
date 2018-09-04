@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43F71CA7-A692-4D70-8DC3-944BB0155390}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ghost</RootNamespace>
+    <AssemblyName>Ghost</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls.Button.cs" />
+    <Compile Include="Controls.ButtonMenu.cs" />
+    <Compile Include="Controls.Buttons.Close.cs" />
+    <Compile Include="Controls.Buttons.Draw.cs" />
+    <Compile Include="Controls.Buttons.Erase.cs" />
+    <Compile Include="Controls.Buttons.Ruler.cs" />
+    <Compile Include="Controls.Buttons.Save.cs" />
+    <Compile Include="Controls.Buttons.Screenshot.cs" />
+    <Compile Include="Controls.Buttons.Text.cs" />
+    <Compile Include="Controls.Buttons.Zoom.cs" />
+    <Compile Include="Converter.Arithmetic.cs" />
+    <Compile Include="Converter.BinaryStruct.cs" />
+    <Compile Include="Converter.UriToBitmap.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Files.Image.cs" />
+    <Compile Include="Files.Images.cs" />
+    <Compile Include="Imaging.Capture.cs" />
+    <Compile Include="Imaging.PixelSnappedImage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolbar.xaml.cs">
+      <DependentUpon>Toolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <Compile Include="WPFControlEnumerator.cs" />
+    <Compile Include="Wrapper.Control.xaml.cs">
+      <DependentUpon>Wrapper.Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrapper.Window.xaml.cs">
+      <DependentUpon>Wrapper.Window.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ghost.ico" />
+    <Resource Include="Images\b.png" />
+    <Resource Include="Images\icn_camera.png" />
+    <Resource Include="Images\icn_camera_hvr.png" />
+    <Resource Include="Images\icn_close.png" />
+    <Resource Include="Images\icn_close_hvr.png" />
+    <Resource Include="Images\icn_erase.png" />
+    <Resource Include="Images\icn_erase_hvr.png" />
+    <Resource Include="Images\icn_folder.png" />
+    <Resource Include="Images\icn_folder_hvr.png" />
+    <Resource Include="Images\icn_folder_sel.png" />
+    <Resource Include="Images\icn_font.png" />
+    <Resource Include="Images\icn_font_hvr.png" />
+    <Resource Include="Images\icn_font_sel.png" />
+    <Resource Include="Images\icn_horiz.png" />
+    <Resource Include="Images\icn_horiz_hvr.png" />
+    <Resource Include="Images\icn_horiz_sel.png" />
+    <Resource Include="Images\icn_newwindow.png" />
+    <Resource Include="Images\icn_newwindow_hvr.png" />
+    <Resource Include="Images\icn_pen.png" />
+    <Resource Include="Images\icn_pen_hvr.png" />
+    <Resource Include="Images\icn_pen_sel.png" />
+    <Resource Include="Images\icn_pinned.png" />
+    <Resource Include="Images\icn_pinned_hvr.png" />
+    <Resource Include="Images\icn_save.png" />
+    <Resource Include="Images\icn_save_hvr.png" />
+    <Resource Include="Images\icn_unpin.png" />
+    <Resource Include="Images\icn_unpin_hvr.png" />
+    <Resource Include="Images\icn_vert.png" />
+    <Resource Include="Images\icn_vert_hvr.png" />
+    <Resource Include="Images\icn_vert_sel.png" />
+    <Resource Include="Images\icn_zoom.png" />
+    <Resource Include="Images\icn_zoom_hvr.png" />
+    <Resource Include="Images\icn_zoom_sel.png" />
+    <Resource Include="Images\windowbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Toolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrapper.Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrapper.Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rooler\Rooler.csproj">
+      <Project>{b7871011-e713-46aa-b80d-5a523975be5b}</Project>
+      <Name>Rooler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

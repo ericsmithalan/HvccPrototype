@@ -1,0 +1,277 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ghst_img="clr-namespace:Ghost.Imaging"
+    xmlns:ctl="clr-namespace:Ghost.Controls">
+
+    <!-- COLORS -->
+
+    <!-- menu bar -->
+    <SolidColorBrush x:Key="DarkestGray" Color="#333333" />
+    <SolidColorBrush x:Key="DarkGray" Color="#444444" />
+    <SolidColorBrush x:Key="MidDarkGray" Color="#555555" />
+    <SolidColorBrush x:Key="MidGray" Color="#666666" />
+    <SolidColorBrush x:Key="MidLightGray" Color="#777777" />
+    <SolidColorBrush x:Key="LightGray" Color="#888888" />
+
+    <LinearGradientBrush x:Key="MenuGrad" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#555555" Offset="0.0" />
+                <GradientStop Color="#333333" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ButtonGrad" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#666666" Offset="0.0" />
+                <GradientStop Color="#333333" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonGradHvr" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#777777" Offset="0.0" />
+                <GradientStop Color="#555555" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonGradPress" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#333333" Offset="0.0" />
+                <GradientStop Color="#666666" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonGradSel" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#9476b3" Offset="0.0" />
+                <GradientStop Color="#7e5f9e" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonGradSelHvr" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#aa8dc8" Offset="0.0" />
+                <GradientStop Color="#8f71ae" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonGradSelPress" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#7e5f9e" Offset="0.0" />
+                <GradientStop Color="#9476b3" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SliderGradient" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#777777" Offset="0.0" />
+                <GradientStop Color="#555555" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="SliderGradHvr" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#888888" Offset="0.0" />
+                <GradientStop Color="#666666" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <!-- TEXT -->
+
+    <!-- WINDOW -->
+    <Style x:Key="WindowBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGray}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style x:Key="WindowInnerBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource MidLightGray}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <!-- TOOLBAR BUTTON -->
+    <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="2" StrokeThickness="1" Stroke="{StaticResource DarkGray}" StrokeDashArray="1 2" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle" TargetType="{x:Type ctl:Button}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ctl:Button}">
+                    <Border
+                        x:Name="Border"
+                        SnapsToDevicePixels="True"
+                        CornerRadius="3"
+                        BorderThickness="1"
+                        Background="{StaticResource ButtonGrad}"
+                        BorderBrush="{StaticResource DarkGray}">
+
+                        <StackPanel
+                            Margin="0,1,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+
+                            <ghst_img:PixelSnappedImage
+                                x:Name="Icon"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="{Binding Icon, RelativeSource={RelativeSource FindAncestor,AncestorType=Button}}"
+                                Width="15"
+                                Height="14" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkGray}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource MidGray}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonGradSel}" />
+                            <Setter TargetName="Icon" Property="Source" Value="{Binding HoverIcon, RelativeSource={RelativeSource FindAncestor,AncestorType=Button}}" />
+                        </Trigger>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkGray}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonGradHvr}" />
+                            <Setter TargetName="Icon" Property="Source" Value="{Binding HoverIcon, RelativeSource={RelativeSource FindAncestor,AncestorType=Button}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonGradPress}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkGray}" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="IsMouseOver" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkestGray}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonGradSelHvr}" />
+                            <Setter TargetName="Icon" Property="Source" Value="{Binding HoverIcon, RelativeSource={RelativeSource FindAncestor,AncestorType=Button}}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="IsPressed" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkestGray}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonGradSelPress}" />
+                            <Setter TargetName="Icon" Property="Source" Value="{Binding HoverIcon, RelativeSource={RelativeSource FindAncestor,AncestorType=Button}}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Icon" Property="Opacity" Value=".5" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DarkGray}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkGray}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- SLIDER -->
+
+    <Style x:Key="SliderButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Ellipse Name="Ellipse" Fill="{StaticResource SliderGradient}" Stroke="{StaticResource DarkGray}" StrokeThickness="1" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Ellipse" Property="Fill" Value="{StaticResource SliderGradHvr}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="HorizontalSlider" TargetType="{x:Type Slider}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MinHeight="{TemplateBinding Slider.MinHeight}" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TickBar Name="TopTick" SnapsToDevicePixels="True" Placement="Top" Fill="{StaticResource LightGray}" Height="4" Visibility="Collapsed" />
+            <Border Name="TrackBackground" Margin="0" CornerRadius="2" Height="4" Grid.Row="1" Background="{StaticResource LightGray}" BorderBrush="{StaticResource LightGray}" BorderThickness="1" />
+            <Track Grid.Row="1" Name="PART_Track">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderButtonStyle}" Command="Slider.DecreaseLarge" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource SliderThumbStyle}" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderButtonStyle}" Command="Slider.IncreaseLarge" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <TickBar Name="BottomTick" SnapsToDevicePixels="True" Grid.Row="2" Fill="#999999" Placement="Bottom" Height="4" Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="TickPlacement" Value="TopLeft">
+                <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="TickPlacement" Value="BottomRight">
+                <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="TickPlacement" Value="Both">
+                <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+                <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style TargetType="{x:Type Slider}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="MinWidth" Value="104" />
+                <Setter Property="MinHeight" Value="21" />
+                <Setter Property="Template" Value="{StaticResource HorizontalSlider}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

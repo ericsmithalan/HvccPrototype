@@ -1,0 +1,25 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DeviceInstalledNoNewData"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Device Installed No New Data"
+    Description="User sees this screen if they connect their device but Connection Center doesn't find any new data on it."
+    IsDialog="False"
+    IsMenusVisible="True"
+    IsDeviceRelatedPage="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}">
+           No new data found on this device
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+            Add some text about how the user can get data or something
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}" Margin="0,25,0,0">
+            Your last upload was on January 1 2010
+        </TextBlock>
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonAction}" Width="200" Margin="0,0,0,10" Content="View data in HealthVault" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

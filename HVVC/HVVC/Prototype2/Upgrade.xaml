@@ -1,0 +1,24 @@
+﻿<p2:ControlBase x:Class="HVCC.Prototype2.Upgrade"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p2="clr-namespace:HVCC.Prototype2"
+                Description="If a user upgrades HVCC and additional permisions are required after installation, the user will see this."
+                IsDialog="False"
+                IsMenusVisible="False"
+    WindowName="Upgrade Complete">
+    <StackPanel Style="{StaticResource SP_Main}">
+        <TextBlock Style="{StaticResource WND_Header}" Margin="0,10,0,0">
+            <Run>New Connection Center software is not installed on your computer</Run>
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+            <Run>The new software needs your one-time reconfirmation that Connection Cneter may upload data to your HealthVault account</Run>
+        </TextBlock>
+        <TextBlock Style="{StaticResource T1}" TextAlignment="Center" HorizontalAlignment="Center"  Margin="0,20,0,0">
+            <Run>Next, go to HealthVault online and renew Connection Center's access to your HealthVualt account.</Run>
+        </TextBlock>
+
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Click="Button_Click" VerticalAlignment="Top" Style="{StaticResource ButtonAction}" Width="290" Content="Update permisions online at HealthVault" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

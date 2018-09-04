@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="HVCC.Controls.Options"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="0,20,0,0">
+
+        <StackPanel>
+            <TextBlock Style="{StaticResource H2}">
+                Automatic startup
+            </TextBlock>
+            <CheckBox Margin="0,8,0,0">
+                <TextBlock Style="{StaticResource T1}">Start HealthVault Connection Center automatically when I log in to my computer.</TextBlock>
+            </CheckBox>
+        </StackPanel>
+
+        <StackPanel Margin="0,20,0,0">
+            <TextBlock Style="{StaticResource H2}">
+                New devices
+            </TextBlock>
+            <CheckBox  Margin="0,8,0,0">
+                <TextBlock Style="{StaticResource T1}">
+                    If I connect a HealthVault-compatible device to my computer and haven't yet enabled it to upload to HealthVault, prompt me to add it.
+                </TextBlock>
+            </CheckBox>
+        </StackPanel>
+
+        <StackPanel Margin="0,20,0,0">
+            <TextBlock Style="{StaticResource H2}">
+                Help improve HealthVualt Connection Center
+            </TextBlock>
+            <CheckBox  Margin="0,8,0,0">
+                <TextBlock Style="{StaticResource T1}">
+                    Join the Customer Experience Improvement program, which sends anonymous usage data to Microsoft.
+                </TextBlock>
+            </CheckBox>
+            <TextBlock Style="{StaticResource T1}"  Margin="0,5,0,0">
+                <Hyperlink Style="{StaticResource A1}">View customer Experience Improvement Program Privacy Statement</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Margin="0,20,0,0">
+            <TextBlock Style="{StaticResource H2}">
+                Internet Connection
+            </TextBlock>
+            <TextBlock Margin="0,3,0,0" Style="{StaticResource T1}">
+                Change Internet connection settings for your computer
+            </TextBlock>
+            <Button Width="150"  Margin="0,8,0,0" HorizontalAlignment="Left" Content="Internet settings..." />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"  Margin="0,50,0,0">
+            <Button Style="{StaticResource BtnAction}" HorizontalAlignment="Left" Click="Button_Click" Content="OK" Margin="0,0,10,0" />
+            <Button Style="{StaticResource Btn}" HorizontalAlignment="Left" Click="Button_Click" Content="Cancel" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

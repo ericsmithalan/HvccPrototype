@@ -1,0 +1,36 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.Error_Dialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+   WindowName="Error"
+    Description="General Error Dialog"
+    IsDialog="True"
+    IsMenusVisible="False"
+
+   Style="{StaticResource UC_Dialog}">
+    <DockPanel Style="{StaticResource DP_Dialog}">
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left">
+            <p2:PixelSnappedImage DockPanel.Dock="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Source="../images/icn_stop.png" Width="24" Height="24" />
+            <TextBlock DockPanel.Dock="Top"  Style="{StaticResource DLG_Header}" Margin="7,0,0,0">
+                Something didn't go your way
+            </TextBlock>
+        </StackPanel>
+
+        <TextBlock  DockPanel.Dock="Top" Style="{StaticResource DLG_SubHeader}">
+            <Run>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec mauris lacus. Donec elementum malesuada dolor a imperdiet.</Run>
+        </TextBlock>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,15,0,0">
+            <TextBlock Style="{StaticResource T1}" TextWrapping="Wrap" VerticalAlignment="Center"  Margin="0,0,0,0">
+                <Hyperlink Style="{StaticResource A1}">Learn more about this error</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Content="Close" />
+            <Button Style="{StaticResource ButtonAction}" Content="Try agian" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

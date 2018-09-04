@@ -1,0 +1,31 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.RemovingAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Removing Account"
+    Description="Shows progress of record being removed."
+    IsDialog="True"
+    IsMenusVisible="False"
+    Style="{StaticResource UC_Dialog}">
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+            <TextBlock Style="{StaticResource DLG_Header}">
+                Removing Person
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                <Run>Connection Center is removing access to </Run>
+                <Run FontWeight="Bold">Eric's Smith's</Run>
+                <Run>HealthVault record </Run>
+            </TextBlock>
+            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,20,0,0"  TextAlignment="Left" Style="{StaticResource T1}">
+                <Run>Please wait...</Run>
+            </TextBlock>
+            <ProgressBar Style="{StaticResource PB_Progress}" Width="340" HorizontalAlignment="Left" Margin="0,5,0,0" x:Name="progress" />
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

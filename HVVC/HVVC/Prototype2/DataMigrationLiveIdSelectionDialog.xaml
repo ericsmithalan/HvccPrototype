@@ -1,0 +1,36 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DataMigrationLiveIdSelectionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Data Migration Live Id Selection Dialog"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="Users who are upgrading HVCC may get see this dialog. Not sure yet"
+    Style="{StaticResource UC_Dialog}">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <TextBlock Style="{StaticResource DLG_Header}">
+                Select the Windows Live ID you use at HealthVault
+            </TextBlock>
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                Please select the Live ID for your HealthVault account so we can move the pending data to your new Connnection Center software.
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource T1}" FontWeight="Bold" Margin="0,20,0,0">
+                Select your Windows Live ID:
+            </TextBlock>
+            <ComboBox Width="250" HorizontalAlignment="Left">
+                <ComboBoxItem Content="atchut_barli@hotmail.com" />
+                <ComboBoxItem Content="atchut_barli2233@hotmail.com" />
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="True" Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Move data" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

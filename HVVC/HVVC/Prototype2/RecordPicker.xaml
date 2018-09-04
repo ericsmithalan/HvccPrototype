@@ -1,0 +1,6 @@
+﻿<UserControl
+    x:Class="HVCC.Prototype2.RecordPicker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ComboBox x:Name="cmbPeople" Style="{StaticResource ComboBoxLarge}" ItemTemplate="{StaticResource ComboTemplateLarge}" VerticalAlignment="Top" Width="200" Padding="5" HorizontalAlignment="Center" />
+</UserControl>

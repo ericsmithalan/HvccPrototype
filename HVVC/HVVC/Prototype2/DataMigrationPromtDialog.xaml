@@ -1,0 +1,28 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DataMigrationPromtDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Data Migration Prompt"
+    IsDialog="True"
+    IsMenusVisible="False"
+    Description="Users who are upgrading HVCC may get see this dialog. Not sure yet"
+    Style="{StaticResource UC_Dialog}">
+
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <TextBlock Style="{StaticResource DLG_Header}">
+               You have device data waiting to upload
+            </TextBlock>
+            <TextBlock Style="{StaticResource DLG_SubHeader}">
+                We found data that you haven't yet uploaded to HealthVault. Would you like to move this pending data to your new Connection Center software so you can work with it?
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource SP_Buttons}" Margin="0">
+            <Button Click="Button_Click" IsCancel="True" Style="{StaticResource ButtonStandard}" Content="Cancel" />
+            <Button Click="Button_Click" IsCancel="False" Style="{StaticResource ButtonAction}" Content="Move data" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

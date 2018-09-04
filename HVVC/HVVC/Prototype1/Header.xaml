@@ -1,0 +1,105 @@
+﻿<UserControl
+    x:Class="HVCC.Prototype1.Header"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hvcc="clr-namespace:HVCC.Controls">
+    <Grid Margin="0,5,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <hvcc:Bitmap  Grid.Column="0" Grid.Row="0" Source="../images/logo.png"  Width="184" Height="26" Margin="15,0,0,0" HorizontalAlignment="left" />
+
+        <Menu Grid.Column="1" Grid.Row="0" Margin="5,6,15,0"  IsMainMenu="True" Name="menu1" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Background="Transparent">
+            <MenuItem Padding="10,6,10,0" Name="Devices" Header="Devices">
+                <MenuItem Margin="0,5,0,0" Click="AddNew_Click" Header="Add a new device" />
+                <Separator Padding="0" Margin="0" />
+                <MenuItem Header="Omron Pedometer" MouseLeftButtonDown="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <hvcc:Bitmap Source="../images/icn_online.png"   Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem Click="Omron_Upload_Click" Margin="0,5,0,0" FontWeight="Bold" Header="Upload">
+                        <MenuItem.Icon>
+                            <hvcc:Bitmap Source="../images/icn_online.png"   Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="Omron_Settings_Click" Header="Upload Settings" />
+                    <MenuItem Click="Omron_Info_Click" Header="Device Info" />
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="Data_Click" Header="View uploaded data" />
+                    <MenuItem Click="Troubleshoot_Click" Header="Troubleshoot" />
+                </MenuItem>
+                <MenuItem Header="LifeScan Ultratouch">
+                    <MenuItem.Icon>
+                        <hvcc:Bitmap Source="../images/icn_online.png"   Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem Click="LifeScan_Upload_Click" FontWeight="Bold" Margin="0,5,0,0" Header="Upload">
+                        <MenuItem.Icon>
+                            <hvcc:Bitmap Source="../images/icn_online.png"   Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="LifeScan_Settings_Click" Header="Upload Settings" />
+                    <MenuItem Click="LifeScan_Info_Click" Header="Device Info" />
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="Data_Click" Header="View uploaded data" />
+                    <MenuItem Click="Troubleshoot_Click" Header="Troubleshoot" />
+                </MenuItem>
+                <MenuItem Header="Multiple User Device">
+                    <MenuItem.Icon>
+                        <hvcc:Bitmap Source="../images/icn_online.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem Click="LifeScan_Multiple_Click" Margin="0,5,0,0" FontWeight="Bold" Header="Upload">
+                        <MenuItem.Icon>
+                            <hvcc:Bitmap Source="../images/icn_online.png"   Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="LifeScan_Settings_Click" Header="Upload Settings" />
+                    <MenuItem Click="LifeScan_Info_Click" Header="Device Info" />
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="Data_Click" Header="View uploaded data" />
+                    <MenuItem Click="Troubleshoot_Click" Header="Troubleshoot" />
+                </MenuItem>
+                <MenuItem Header="Microlife Weight Scale">
+                    <MenuItem.Icon>
+                        <hvcc:Bitmap Source="../images/icn_offline.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem IsEnabled="False" Margin="0,5,0,0" Header="Upload">
+                        <MenuItem.Icon>
+                            <hvcc:Bitmap Source="../images/icn_offline.png"   Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="LifeScan_Settings_Click" Header="Upload Settings" />
+                    <MenuItem Click="LifeScan_Info_Click" Header="Device Info" />
+                    <Separator Padding="0" Margin="0" />
+                    <MenuItem Click="Data_Click" Header="View uploaded data" />
+                    <MenuItem Click="Troubleshoot_Click" Header="Troubleshoot" />
+                </MenuItem>
+                <Separator Padding="0" Margin="0" />
+                <MenuItem Click="DeviceDir_Click" Header="HealthVault Device Directory" />
+            </MenuItem>
+            <MenuItem Padding="10,6,10,6" Header="Tools">
+                <MenuItem Header="Options" Click="Options_Click" />
+                <MenuItem Header="Account">
+                    <MenuItem Click="HVAccount_Click" Header="Go to HealthVault account" />
+                    <MenuItem Click="HVSwitch_Click" Header="Switch HealthVault account" />
+                    <MenuItem Click="HVRemove_Click" Header="Remvoe current user" />
+                </MenuItem>
+                <MenuItem Click="Updates_Click" Header="Check for updates" />
+                <Separator Padding="0" Margin="0" />
+                <MenuItem Click="Exit_Click" Header="Exit" />
+            </MenuItem>
+            <MenuItem Padding="10,6,10,6" Header="Help">
+                <MenuItem Header="Get help online" />
+                <MenuItem Header="View privacy statement" />
+                <MenuItem Header="View terms of use" />
+                <MenuItem Header="Send feedback" />
+                <MenuItem Click="About_Click" Header="About…" />
+                <MenuItem Header="CEIP terms" />
+            </MenuItem>
+        </Menu>
+    </Grid>
+</UserControl>

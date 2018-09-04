@@ -1,0 +1,39 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.UploadSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="Device Upload Settings"
+    Description="Upload settings for device page. Users can see this by clicking on the device in the menu and selecting upload settings."
+    IsDialog="True"
+    IsMenusVisible="False"
+    Style="{StaticResource UC_Dialog}">
+    <DockPanel Style="{StaticResource DP_Dialog}">
+        <StackPanel DockPanel.Dock="Top" Style="{StaticResource SP_Dialog}">
+
+            <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" Orientation="Horizontal">
+                    <p2:PixelSnappedImage DockPanel.Dock="Left" VerticalAlignment="Top" x:Name="img_user"  Width="25" Height="25" />
+
+                    <TextBlock x:Name="tb_device" Style="{StaticResource DLG_Header}" Margin="5,0,0,0">
+                    </TextBlock>
+                </StackPanel>
+                <p2:PixelSnappedImage DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="img_manufacturer" Margin="0,0,0,0" Width="100" Height="50" Source="../images/logo_omron.png" />
+            </DockPanel>
+
+            <StackPanel Margin="0,10,0,0">
+                <TextBlock Style="{StaticResource H2}" HorizontalAlignment="Left" Margin="0,0,0,10">
+                            What should we do when you connect this device to your computer?
+                </TextBlock>
+                <RadioButton Margin="0,0,0,5" Content="Start the upload automatically" Style="{StaticResource R1}"></RadioButton>
+                <RadioButton Margin="0,0,0,5" Content="Let me confirm the record I want to use for upload" Style="{StaticResource R1}"></RadioButton>
+                <RadioButton Content="Take no action" Style="{StaticResource R1}"></RadioButton>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Style="{StaticResource SP_Buttons}" DockPanel.Dock="Bottom" Margin="0">
+
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" Click="Button_Click" />
+            <Button Style="{StaticResource ButtonAction}" Content="OK" Click="Button_Click" Margin="10,0,0,0" />
+        </StackPanel>
+    </DockPanel>
+</p2:ControlBase>

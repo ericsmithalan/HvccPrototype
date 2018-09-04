@@ -1,0 +1,21 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.NoNewDataOnDevice"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    WindowName="No New Data on Device"
+    Description="If a user plugs in a device with no new data, they will see this page."
+    IsDialog="False"
+    IsMenusVisible="True">
+    <StackPanel Style="{StaticResource SP_Main_Menu}">
+        <TextBlock Style="{StaticResource WND_Header}">
+           No new data on this device.
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}">
+           Your last upload was on Jan 1 2010
+        </TextBlock>
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonAction}" Width="200" Margin="0,0,0,10" Content="View data in HealthVault" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>

@@ -1,0 +1,22 @@
+﻿<p2:ControlBase
+    x:Class="HVCC.Prototype2.DownloadingXML"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p2="clr-namespace:HVCC.Prototype2"
+    Description="Users will see this the first time they launch HVCC. This is where HVCC gets the latest device XML file."
+    IsDialog="False"
+    IsMenusVisible="False"
+    WindowName="Downloading XML">
+    <StackPanel Style="{StaticResource SP_Main}">
+        <TextBlock Style="{StaticResource WND_Header}" Margin="0,10,0,0">
+            <Run>Downloading Devices List</Run>
+        </TextBlock>
+        <TextBlock Style="{StaticResource WND_SubHeader}" Margin="0,20,0,5">
+            <Run>Please wait</Run>
+        </TextBlock>
+        <ProgressBar Style="{StaticResource PB_Progress}" x:Name="progress" Margin="0" />
+        <StackPanel Style="{StaticResource SP_Buttons}">
+            <Button Style="{StaticResource ButtonStandard}" Content="Cancel" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</p2:ControlBase>
