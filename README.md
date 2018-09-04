@@ -12,4 +12,4 @@ _Note: Rooler was not built by me. This was shared by another worker at Microsof
 - Allow Design to skip the redlining process
 
 
-![alt text](screenshot.png "Ghost Application Screenshot")
+![alt text](screenshots.png "Ghost Application Screenshot")
