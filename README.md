@@ -4,7 +4,7 @@ I built this back in 2010 to provide a prototype that could be used to test use 
 
 _Note: Rooler was not built by me. This was shared by another worker at Microsoft_
 
-###Goals
+### Goals
 - Create a prototype that allowed for different user flows
 - Allow a developer to quickly obtain measurements 
 - Allow developers to draw on top of work and save 
