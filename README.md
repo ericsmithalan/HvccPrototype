@@ -8,6 +8,5 @@ _Note: Rooler was not built by me. This was shared by another worker at Microsof
 - Create a prototype that allowed for different user flows
 - Allow a developer to quickly obtain measurements 
 - Allow developers to draw on top of work and save 
-- Allow developers to superimpose app on top of their work
 - Allow Usability Researchers to setup scenarios to test
 - Allow Design to skip the redlining process
